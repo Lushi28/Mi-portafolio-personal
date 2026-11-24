@@ -26,23 +26,17 @@
   // ---------- 1. Renderizado de la sección Inicio (Hero) ----------
   function renderHero() {
     const g = data.greeting;
-    document.getElementById("heroEyebrow").textContent = g.eyebrow;
     document.getElementById("heroName").textContent = g.fullName;
     document.getElementById("heroRole").textContent = g.role;
     document.getElementById("heroBio").textContent = g.valueProposition;
 
-    // Píldoras de contacto rápido (GitHub, correo, teléfono y LinkedIn)
+    // Enlaces de contacto rápido concentrados en una sola fila limpia
     document.getElementById("heroSocials").innerHTML = `
-      <a href="${g.githubProfile}" target="_blank" rel="noreferrer" class="social-pill">${icons.github} GitHub (@Lushi28)</a>
-      <a href="mailto:${g.email}" class="social-pill">${icons.mail} ${g.email}</a>
-      <a href="${g.phoneHref}" class="social-pill">${icons.phone} ${g.phoneDisplay}</a>
+      <a href="${g.githubProfile}" target="_blank" rel="noreferrer" class="social-pill">${icons.github} GitHub</a>
+      <a href="mailto:${g.email}" class="social-pill">${icons.mail} Correo</a>
+      <a href="${g.phoneHref}" class="social-pill">${icons.phone} Teléfono</a>
       <a href="${g.linkedinProfile}" target="_blank" rel="noreferrer" class="social-pill">${icons.linkedin} LinkedIn</a>
     `;
-
-    // Pilares personales separados por punto medio
-    document.getElementById("heroPillars").innerHTML = g.pillars
-      .map((p, idx) => `<span>${p}</span>${idx < g.pillars.length - 1 ? '<span aria-hidden="true">·</span>' : ""}`)
-      .join("");
   }
 
   // ---------- 2. Renderizado de la sección Sobre mí ----------
@@ -139,15 +133,11 @@
   }
 
   // ---------- 4. Renderizado de la sección Proyectos ----------
-  // Recibe el filtro seleccionado ("Todos", "Colaborativo" o "Personal")
-  function renderProjects(filter = "Todos") {
+  // Tarjetas escaneables (qué hace + mi aporte + enlaces) y detalles completos en el modal
+  function renderProjects() {
     const grid = document.getElementById("projectsGrid");
-    const list =
-      filter === "Todos"
-        ? data.projects
-        : data.projects.filter((p) => p.category === filter);
 
-    grid.innerHTML = list
+    grid.innerHTML = data.projects
       .map(
         (p) => `
       <article class="project-card">
@@ -161,36 +151,13 @@
           <p class="project-summary">${p.summary}</p>
 
           <div class="project-detail-block">
-            <strong>Mi contribución</strong>
-            ${p.myContribution}
-          </div>
-
-          <div class="project-detail-block">
-            <strong>Desafío y solución</strong>
-            ${p.challenges} ${p.solution}
-          </div>
-
-          ${
-            p.collaborators.length
-              ? `<div class="collaborators-row">
-                   <span>Colaboradores:</span>
-                   ${p.collaborators
-                     .map(
-                       (c) =>
-                         `<a href="${c.url}" target="_blank" rel="noreferrer" class="collab-link">@${c.name}</a>`
-                     )
-                     .join("")}
-                 </div>`
-              : ""
-          }
-
-          <div class="tech-tags" aria-label="Tecnologías usadas">
-            ${p.technologies.map((t) => `<span class="tech-tag">${t}</span>`).join("")}
+            <strong>Mi aporte</strong>
+            ${p.cardContribution}
           </div>
 
           <div class="project-actions">
             <a href="${p.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-primary">
-              ${icons.github} Código fuente
+              ${icons.github} Código
             </a>
             <button type="button" class="btn btn-outline" data-project-id="${p.id}">
               Ver ficha completa
@@ -201,7 +168,7 @@
       )
       .join("");
 
-    // Conectamos cada botón "Ver ficha completa" para abrir el modal con los detalles
+    // Conectamos cada botón "Ver ficha completa" para abrir el modal con los detalles técnicos
     grid.querySelectorAll("[data-project-id]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const project = data.projects.find((item) => item.id === btn.dataset.projectId);
@@ -364,6 +331,17 @@
         ${project.problemSolved}
       </div>
       <div class="project-detail-block">
+        <strong>Mi aporte principal</strong>
+        ${project.myContribution}
+      </div>
+      <div class="project-detail-block">
+        <strong>Contexto técnico y stack</strong>
+        <p style="margin: 0 0 0.65rem">${project.teamStackNote}</p>
+        <div class="tech-tags" style="margin: 0">
+          ${project.technologies.map((t) => `<span class="tech-tag">${t}</span>`).join("")}
+        </div>
+      </div>
+      <div class="project-detail-block">
         <strong>Características principales</strong>
         <ul class="timeline-bullets" style="margin-top: 0.45rem">
           ${project.features.map((f) => `<li>${f}</li>`).join("")}
@@ -374,6 +352,19 @@
         <p style="margin: 0 0 0.5rem">${project.challenges}</p>
         <p style="margin: 0">${project.solution}</p>
       </div>
+      ${
+        project.collaborators.length
+          ? `<div class="collaborators-row" style="margin-top: 1rem">
+               <span>Colaboradores:</span>
+               ${project.collaborators
+                 .map(
+                   (c) =>
+                     `<a href="${c.url}" target="_blank" rel="noreferrer" class="collab-link">@${c.name}</a>`
+                 )
+                 .join("")}
+             </div>`
+          : ""
+      }
       <div class="project-actions" style="margin-top: 1.4rem">
         <a href="${project.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-primary">
           ${icons.github} Abrir repositorio en GitHub
@@ -403,16 +394,7 @@
     if (e.key === "Escape" && !modal.hidden) closeModal();
   });
 
-  // ---------- 9. Filtros interactivos de Proyectos ----------
-  document.getElementById("projectFilters").addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
-    document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProjects(btn.dataset.filter);
-  });
-
-  // ---------- 10. Menú móvil desplegable ----------
+  // ---------- 9. Menú móvil desplegable ----------
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const navMenuWrap = document.getElementById("navMenuWrap");
   const navLinks = document.getElementById("navLinks");
@@ -464,10 +446,10 @@
   document.getElementById("printCvBtn").addEventListener("click", () => window.print());
   document.getElementById("navCvBtn").addEventListener("click", () => window.print());
 
-  // ---------- 13. Inicialización de todas las secciones al cargar la página ----------
+  // ---------- 12. Inicialización de todas las secciones al cargar la página ----------
   renderHero();
   renderAbout();
-  renderProjects("Todos");
+  renderProjects();
   renderCV();
   renderBlog();
   renderContact();

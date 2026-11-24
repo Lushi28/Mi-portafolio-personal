@@ -9,20 +9,18 @@
 window.PORTFOLIO_DATA = {
   // 1. DATOS DE INICIO Y CONTACTO: portada (Hero) y sección Contáctame
   greeting: {
-    eyebrow: "PORTAFOLIO PERSONAL · DESARROLLO FULL STACK",
     fullName: "Luisa Fernanda Sepúlveda Doria",
-    role: "Desarrolladora Java Full Stack Jr. | Analista de Soporte Técnico",
+    role: "Desarrolladora Java Full Stack Jr. en formación",
     valueProposition:
-      "Soy profesional de soporte técnico y desarrolladora Java Full Stack Junior en formación en Generation Colombia. Combino mi experiencia en análisis de incidencias y atención a usuarios con el desarrollo en Java, SQL y tecnologías web para crear soluciones digitales claras y funcionales.",
+      "Vengo del soporte técnico en Stefanini Group, donde aprendí a diagnosticar incidencias y entender las necesidades de los usuarios. Hoy aplico esa experiencia al desarrollo de aplicaciones web.",
     email: "luisadoria858@gmail.com",
     phoneDisplay: "+57 302 717 5593",
     phoneHref: "tel:+573027175593",
     location: "Bogotá, Colombia · Disponible para trabajo presencial, híbrido o remoto",
     githubProfile: "https://github.com/Lushi28",
     portfolioRepository: "https://github.com/Lushi28/Mi-portafolio-personal",
-    // Perfil profesional de LinkedIn
+    // Perfil profesional de LinkedIn (actualiza aquí con tu URL exacta)
     linkedinProfile: "https://www.linkedin.com/",
-    pillars: ["CREATIVIDAD", "CÓDIGO", "CRECIMIENTO"],
   },
 
   // 2. SECCIÓN "SOBRE MÍ": historia personal en primera persona y 3 tarjetas resumen
@@ -60,23 +58,27 @@ window.PORTFOLIO_DATA = {
     {
       id: "tmv-project",
       title: "Tú Mayorista Virtual (TMV)",
-      category: "Colaborativo", // Debe ser "Colaborativo" o "Personal" para que funcione el filtro
+      category: "Colaborativo",
       period: "Septiembre – Noviembre 2026",
-      previewType: "tmv", // Selecciona la vista previa SVG en js/main.js
+      previewType: "tmv",
       summary:
-        "Aplicación web comercial y educativa desarrollada con arquitectura desacoplada (frontend modular + backend en Java/Spring Boot + MySQL y pruebas QA).",
+        "Plataforma web comercial desarrollada en equipo (5 personas) para explorar productos mayoristas por categorías.",
+      cardContribution:
+        "Construí la vista de catálogo y la navegación lateral por categorías (aseo, desinfectantes, detergentes, protección y cocina) con HTML5, CSS3, Bootstrap y JavaScript (23 commits).",
+      teamStackNote:
+        "Stack del equipo: Frontend en HTML5, CSS3, Bootstrap y JavaScript; Backend en Java, Spring Boot y MySQL; pruebas QA con Postman y Selenium.",
       problemSolved:
-        "Ofrecer a los usuarios una plataforma web comercial clara y bien organizada para explorar productos mayoristas por categorías, manteniendo una base técnica escalable.",
+        "Ofrecer a los usuarios una plataforma web comercial clara y bien organizada para explorar productos mayoristas por categorías, manteniendo una arquitectura desacoplada y escalable.",
       myContribution:
-        "Participé activamente en el desarrollo frontend (23 commits, segunda mayor contribuidora del repositorio), construyendo la vista de catálogo de productos y su barra lateral de categorías (aseo y limpieza, desinfectantes, detergentes, protección y cocina) con HTML5, CSS3, Bootstrap y JavaScript, colaborando con Git en equipo.",
+        "Construí el catálogo y la navegación por categorías en el frontend (23 commits, segunda mayor contribuidora del repositorio), organizando líneas de aseo y limpieza, desinfectantes, detergentes, protección y cocina, e integrando el trabajo con el backend del equipo en Java, Spring Boot y MySQL mediante Git.",
       challenges:
-        "Coordinar el trabajo simultáneo de cinco integrantes y organizar múltiples líneas de productos manteniendo una navegación clara y consistente en dispositivos móviles y escritorio.",
+        "Coordinar el trabajo simultáneo de cinco integrantes y organizar múltiples líneas de productos manteniendo una navegación clara y consistente en móvil y escritorio.",
       solution:
         "Estructuramos el repositorio de forma modular (`frontend/`, `backend/`, `docs/`), diseñamos una barra lateral intuitiva para filtrar categorías y trabajamos con flujo ordenado de ramas en Git y validaciones QA.",
       features: [
-        "Vista de catálogo de productos con barra lateral de categorías (aseo y limpieza, desinfectantes, detergentes, protección y cocina).",
+        "Vista de catálogo de productos y barra lateral de categorías (mi aporte principal).",
         "Frontend modular con componentes reutilizables en HTML5, CSS3, Bootstrap y JavaScript ES6.",
-        "Backend desacoplado en Java, Spring Boot, Maven y base de datos MySQL.",
+        "Backend del equipo en Java, Spring Boot, Maven y base de datos MySQL.",
         "Plan de pruebas y automatización QA con Postman y Selenium WebDriver.",
       ],
       technologies: [
@@ -84,10 +86,10 @@ window.PORTFOLIO_DATA = {
         "CSS3",
         "Bootstrap",
         "JavaScript",
-        "Java",
-        "Spring Boot",
-        "MySQL",
         "Git",
+        "Java (equipo)",
+        "Spring Boot (equipo)",
+        "MySQL (equipo)",
       ],
       collaborators: [
         { name: "jlozanopenagos", url: "https://github.com/jlozanopenagos" },
@@ -104,7 +106,11 @@ window.PORTFOLIO_DATA = {
       period: "Octubre – Noviembre 2026",
       previewType: "plan-amigo",
       summary:
-        "Aplicación web adaptable para registrar y organizar tareas en tarjetas, con responsables, fechas de entrega, estados y persistencia automática en el navegador.",
+        "Aplicación web adaptable para registrar y organizar tareas en tarjetas con responsables, fechas límite y estados.",
+      cardContribution:
+        "Diseñé y programé todo el proyecto: validaciones accesibles, gestión de tarjetas (agregar/eliminar), contador en tiempo real y persistencia con LocalStorage.",
+      teamStackNote:
+        "Proyecto individual enfocado en fundamentos de JavaScript, manipulación del DOM, accesibilidad y persistencia local.",
       problemSolved:
         "Brindar una herramienta ligera y directa para planificar pendientes diarios paso a paso, permitiendo visualizar responsables, fechas límite y avances sin perder datos al recargar.",
       myContribution:

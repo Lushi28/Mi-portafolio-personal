@@ -53,9 +53,9 @@
       <div id="navMenuWrap" class="nav-menu-wrap">
         <nav aria-label="Navegación principal">
           <ul id="navLinks" class="nav-links">
+            <li><a href="#portafolio">Proyectos</a></li>
             <li><a href="#acerca">Sobre mí</a></li>
             <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#portafolio">Proyectos</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
             <li><a href="#formacion">Formación</a></li>
             <li><a href="#blog">Blog</a></li>
@@ -123,26 +123,24 @@
           </div>
 
           <!-- Textos inyectados dinámicamente desde js/portfolio-data.js -->
-          <p class="hero-eyebrow" id="heroEyebrow"></p>
           <h1 class="hero-name" id="heroName"></h1>
           <p class="hero-role" id="heroRole"></p>
           <p class="hero-bio" id="heroBio"></p>
 
-          <!-- Botones principales de llamado a la acción (CTA) -->
+          <!-- Botones principales de llamado a la acción (CTA): Ver proyectos como acción primaria -->
           <div class="hero-actions">
-            <a href="#acerca" class="btn btn-primary">
-              Conóceme
+            <a href="#portafolio" class="btn btn-primary">
+              Ver proyectos
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M7 7l10 10M17 7v10H7" />
               </svg>
             </a>
-            <a href="#portafolio" class="btn btn-outline">Ver mis proyectos</a>
+            <a href="#experiencia" class="btn btn-outline">Ver CV</a>
           </div>
 
-          <!-- Enlaces sociales y pilares personales (inyectados por js/main.js) -->
+          <!-- Enlaces de contacto concentrados en una sola fila -->
           <div class="hero-socials" id="heroSocials"></div>
-          <div class="hero-pillars" id="heroPillars" aria-label="Pilares personales"></div>
         </div>
 
         <!-- Columna derecha: ilustración personal con marco luminoso y etiqueta flotante -->
@@ -163,7 +161,24 @@
       </div>
     </section>
 
-    <!-- ==================== 2. SOBRE MÍ ==================== -->
+    <!-- ==================== 2. PROYECTOS ==================== -->
+    <!-- Ubicados justo después de la portada para mostrar el trabajo de inmediato -->
+    <section id="portafolio" class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">PROYECTOS</p>
+          <h2 class="section-title">Proyectos destacados</h2>
+          <p class="section-subtitle">
+            Dos proyectos completos con foco en mi aporte personal, el código en GitHub y su ficha técnica detallada.
+          </p>
+        </div>
+
+        <!-- Cuadrícula de tarjetas de proyectos (ambos siempre visibles) -->
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. SOBRE MÍ ==================== -->
     <!-- Historia personal en primera persona y tarjetas resumen de perfil -->
     <section id="acerca" class="section">
       <div class="container">
@@ -179,7 +194,7 @@
       </div>
     </section>
 
-    <!-- ==================== 3. EXPERIENCIA ==================== -->
+    <!-- ==================== 4. EXPERIENCIA ==================== -->
     <!-- Línea de tiempo con experiencia laboral (Stefanini Group) y proyectos formativos -->
     <section id="experiencia" class="section alt">
       <div class="container">
@@ -198,34 +213,9 @@
       </div>
     </section>
 
-    <!-- ==================== 4. PROYECTOS ==================== -->
-    <!-- Portafolio interactivo con filtros (Todos / Colaborativos / Personales) y modal de ficha completa -->
-    <section id="portafolio" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">PROYECTOS</p>
-          <h2 class="section-title">Proyectos destacados</h2>
-          <p class="section-subtitle">
-            Selecciono proyectos activos y completos que reflejan mi crecimiento técnico, mi capacidad de trabajo en
-            equipo y mi enfoque en la calidad.
-          </p>
-        </div>
-
-        <!-- Botones de filtro controlados por js/main.js -->
-        <div class="filter-bar" role="group" aria-label="Filtrar proyectos por tipo" id="projectFilters">
-          <button type="button" class="filter-btn active" data-filter="Todos">Todos</button>
-          <button type="button" class="filter-btn" data-filter="Colaborativo">Colaborativos</button>
-          <button type="button" class="filter-btn" data-filter="Personal">Personales</button>
-        </div>
-
-        <!-- Cuadrícula de tarjetas de proyectos (renderizada dinámicamente) -->
-        <div class="projects-grid" id="projectsGrid"></div>
-      </div>
-    </section>
-
     <!-- ==================== 5. HABILIDADES ==================== -->
     <!-- Stack técnico agrupado por categorías, idiomas y habilidades blandas -->
-    <section id="habilidades" class="section alt">
+    <section id="habilidades" class="section">
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">HABILIDADES</p>
@@ -252,7 +242,7 @@
 
     <!-- ==================== 6. FORMACIÓN ==================== -->
     <!-- Educación formal, bootcamp de Generation Colombia y botón para guardar el CV en PDF -->
-    <section id="formacion" class="section">
+    <section id="formacion" class="section alt">
       <div class="container">
         <div class="cv-top-bar">
           <div class="section-header" style="margin-bottom: 0">
@@ -277,7 +267,7 @@
 
     <!-- ==================== 7. BLOG TÉCNICO ==================== -->
     <!-- Artículos sobre Java, soporte técnico y desarrollo web con lectura integrada en modal -->
-    <section id="blog" class="section alt">
+    <section id="blog" class="section">
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">BLOG TÉCNICO</p>

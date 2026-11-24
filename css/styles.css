@@ -20,7 +20,7 @@
   --purple-bright: #9570e6;
   --blue-light: #9cd8f4;
   --blue-mid: #315e9e;
-  --gray: #8d96a5;
+  --gray: #b8c5da;
   --text-main: #f4f7fc;
   --border-subtle: rgba(156, 216, 244, 0.16);
   --border-purple: rgba(123, 83, 203, 0.42);
@@ -144,7 +144,7 @@ button {
   border-radius: var(--radius-pill);
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--gray);
+  color: #d6e0f2;
   white-space: nowrap;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -329,7 +329,7 @@ body.light-theme .section.alt {
 
 .section-subtitle {
   margin: 0;
-  color: var(--gray);
+  color: #cbd7eb;
   font-size: 1.02rem;
 }
 
@@ -1350,6 +1350,14 @@ body.light-theme {
 
 body.light-theme .navbar {
   background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .nav-links a {
+  color: #334155;
+}
+
+body.light-theme .section-subtitle {
+  color: #475569;
 }
 
 body.light-theme .hero-hud-card {
