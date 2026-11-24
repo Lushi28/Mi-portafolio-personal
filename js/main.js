@@ -301,25 +301,29 @@
   function renderContact() {
     const g = data.greeting;
     document.getElementById("contactCircles").innerHTML = `
-      <a href="mailto:${g.email}" class="contact-circle-item">
+      <a href="mailto:${g.email}?subject=Contacto%20desde%20tu%20Portafolio" class="contact-circle-item" title="Enviar correo a ${g.email}">
         <span class="contact-circle-icon">${icons.mail}</span>
         <span>Correo</span>
+        <small class="contact-circle-value">${g.email}</small>
       </a>
-      <a href="${g.phoneHref}" class="contact-circle-item">
+      <a href="${g.phoneHref}" class="contact-circle-item" title="Llamar al ${g.phoneDisplay}">
         <span class="contact-circle-icon">${icons.phone}</span>
-        <span>Llamada</span>
+        <span>Teléfono</span>
+        <small class="contact-circle-value">${g.phoneDisplay}</small>
       </a>
-      <a href="${g.githubProfile}" target="_blank" rel="noreferrer" class="contact-circle-item">
+      <a href="${g.githubProfile}" target="_blank" rel="noreferrer" class="contact-circle-item" title="Abrir perfil de GitHub">
         <span class="contact-circle-icon">${icons.github}</span>
         <span>GitHub</span>
+        <small class="contact-circle-value">@Lushi28</small>
       </a>
-      <a href="${g.linkedinProfile}" target="_blank" rel="noreferrer" class="contact-circle-item">
+      <a href="${g.linkedinProfile}" target="_blank" rel="noreferrer" class="contact-circle-item" title="Abrir perfil de LinkedIn">
         <span class="contact-circle-icon">${icons.linkedin}</span>
         <span>LinkedIn</span>
+        <small class="contact-circle-value">Perfil profesional</small>
       </a>
     `;
 
-    document.getElementById("contactDirectInfo").textContent = `${g.email} · ${g.phoneDisplay}`;
+    document.getElementById("contactDirectInfo").textContent = `${g.location}`;
     document.getElementById("footerCopy").textContent = `© ${new Date().getFullYear()} ${g.fullName}`;
   }
 
