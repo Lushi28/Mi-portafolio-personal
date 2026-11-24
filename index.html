@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- Documento HTML5 en español -->
+<html lang="es">
+
+<head>
+  <!-- Codificación de caracteres y configuración responsive para móviles y escritorio -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Título de la pestaña del navegador y metadatos SEO / Open Graph (redes sociales) -->
+  <title>Luisa Fernanda Sepúlveda Doria | Desarrolladora Java Full Stack Jr.</title>
+  <meta name="description"
+    content="Portafolio personal de Luisa Fernanda Sepúlveda Doria, Desarrolladora Java Full Stack Jr. y Analista de Soporte Técnico en Bogotá, Colombia." />
+  <meta property="og:title" content="Luisa Fernanda Sepúlveda Doria | Portafolio Full Stack" />
+  <meta property="og:description"
+    content="Proyectos en Java, Spring Boot, JavaScript, HTML5, CSS3, Bootstrap y SQL. Creatividad, código y crecimiento." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fuentes de Google Fonts: Playfair Display / Cormorant Garamond (títulos) y Plus Jakarta Sans (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== BARRA DE NAVEGACIÓN SUPERIOR ==================== -->
+  <!-- Barra fija (sticky) con marca personal, enlaces a secciones y controles de tema / CV -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <!-- Logo / Marca personal con insignia de iniciales "LS" -->
+      <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
+        <span class="brand-badge" aria-hidden="true">LS</span>
+        <span>Luisa Sepúlveda</span>
+      </a>
+
+      <!-- Botón hamburguesa visible únicamente en pantallas pequeñas (móvil/tablet) -->
+      <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir menú de navegación"
+        aria-expanded="false" aria-controls="navMenuWrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Contenedor del menú de navegación y botones de acción -->
+      <div id="navMenuWrap" class="nav-menu-wrap">
+        <nav aria-label="Navegación principal">
+          <ul id="navLinks" class="nav-links">
+            <li><a href="#acerca">Sobre mí</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#portafolio">Proyectos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Controles derechos: botón unificado de modo oscuro/claro y botón de descarga/impresión del CV -->
+        <div class="nav-controls">
+          <!-- Botón de tema: muestra Luna en modo oscuro y Sol en modo claro -->
+          <button type="button" id="themeToggleBtn" class="icon-control-btn" aria-label="Cambiar tema claro u oscuro"
+            title="Cambiar tema">
+            <!-- Icono Sol (visible en modo claro) -->
+            <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41">
+              </path>
+            </svg>
+            <!-- Icono Luna (visible en modo oscuro) -->
+            <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+
+          <!-- Botón morado para imprimir o guardar el CV en PDF -->
+          <button type="button" id="navCvBtn" class="nav-cv-btn" title="Descargar o imprimir CV en PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>CV</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <!-- ==================== 1. INICIO / HERO ==================== -->
+    <!-- Presentación principal en 2 columnas: tarjeta HUD a la izquierda e ilustración a la derecha -->
+    <section id="inicio" class="hero">
+      <!-- Decoración circular sutil de fondo (inspirada en el boceto) -->
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="hero-orbit-ring"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Columna izquierda: tarjeta de presentación con esquinas geométricas HUD -->
+        <div class="hero-hud-card">
+          <span class="hud-corner hud-tl" aria-hidden="true"></span>
+          <span class="hud-corner hud-tr" aria-hidden="true"></span>
+          <span class="hud-corner hud-bl" aria-hidden="true"></span>
+          <span class="hud-corner hud-br" aria-hidden="true"></span>
+
+          <!-- Indicador visual de disponibilidad laboral -->
+          <div class="available-pill" id="availablePill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Disponible</span>
+          </div>
+
+          <!-- Textos inyectados dinámicamente desde js/portfolio-data.js -->
+          <p class="hero-eyebrow" id="heroEyebrow"></p>
+          <h1 class="hero-name" id="heroName"></h1>
+          <p class="hero-role" id="heroRole"></p>
+          <p class="hero-bio" id="heroBio"></p>
+
+          <!-- Botones principales de llamado a la acción (CTA) -->
+          <div class="hero-actions">
+            <a href="#acerca" class="btn btn-primary">
+              Conóceme
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 7l10 10M17 7v10H7" />
+              </svg>
+            </a>
+            <a href="#portafolio" class="btn btn-outline">Ver mis proyectos</a>
+          </div>
+
+          <!-- Enlaces sociales y pilares personales (inyectados por js/main.js) -->
+          <div class="hero-socials" id="heroSocials"></div>
+          <div class="hero-pillars" id="heroPillars" aria-label="Pilares personales"></div>
+        </div>
+
+        <!-- Columna derecha: ilustración personal con marco luminoso y etiqueta flotante -->
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait-glow" aria-hidden="true"></div>
+          <figure class="hero-portrait-frame">
+            <img
+              src="img/luisa-hero.jpg"
+              alt="Ilustración de Luisa Fernanda Sepúlveda programando"
+              class="hero-portrait-img"
+            />
+            <figcaption class="hero-portrait-chip">
+              <span class="chip-dot" aria-hidden="true"></span>
+              <span>Java Full Stack · Bogotá</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. SOBRE MÍ ==================== -->
+    <!-- Historia personal en primera persona y tarjetas resumen de perfil -->
+    <section id="acerca" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">SOBRE MÍ</p>
+          <h2 class="section-title" id="aboutTitle"></h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-story" id="aboutStory"></article>
+          <div class="about-highlights" id="aboutHighlights"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. EXPERIENCIA ==================== -->
+    <!-- Línea de tiempo con experiencia laboral (Stefanini Group) y proyectos formativos -->
+    <section id="experiencia" class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">EXPERIENCIA</p>
+          <h2 class="section-title">Experiencia laboral y práctica</h2>
+          <p class="section-subtitle">
+            Trayectoria en soporte técnico corporativo y desarrollo de aplicaciones web Full Stack en equipo e
+            individual.
+          </p>
+        </div>
+
+        <div class="cv-column">
+          <div id="cvExperience"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. PROYECTOS ==================== -->
+    <!-- Portafolio interactivo con filtros (Todos / Colaborativos / Personales) y modal de ficha completa -->
+    <section id="portafolio" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">PROYECTOS</p>
+          <h2 class="section-title">Proyectos destacados</h2>
+          <p class="section-subtitle">
+            Selecciono proyectos activos y completos que reflejan mi crecimiento técnico, mi capacidad de trabajo en
+            equipo y mi enfoque en la calidad.
+          </p>
+        </div>
+
+        <!-- Botones de filtro controlados por js/main.js -->
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos por tipo" id="projectFilters">
+          <button type="button" class="filter-btn active" data-filter="Todos">Todos</button>
+          <button type="button" class="filter-btn" data-filter="Colaborativo">Colaborativos</button>
+          <button type="button" class="filter-btn" data-filter="Personal">Personales</button>
+        </div>
+
+        <!-- Cuadrícula de tarjetas de proyectos (renderizada dinámicamente) -->
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. HABILIDADES ==================== -->
+    <!-- Stack técnico agrupado por categorías, idiomas y habilidades blandas -->
+    <section id="habilidades" class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">HABILIDADES</p>
+          <h2 class="section-title">Stack técnico y competencias</h2>
+          <p class="section-subtitle">
+            Tecnologías con las que construyo soluciones web, idiomas y habilidades de comportamiento aplicadas al
+            trabajo diario.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="cv-column">
+            <h3 class="cv-col-title">Habilidades Técnicas e Idiomas</h3>
+            <div class="skill-groups" id="cvTechSkills"></div>
+          </div>
+
+          <div class="cv-column">
+            <h3 class="cv-col-title">Habilidades de Comportamiento</h3>
+            <div class="soft-skills-list" id="cvSoftSkills"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. FORMACIÓN ==================== -->
+    <!-- Educación formal, bootcamp de Generation Colombia y botón para guardar el CV en PDF -->
+    <section id="formacion" class="section">
+      <div class="container">
+        <div class="cv-top-bar">
+          <div class="section-header" style="margin-bottom: 0">
+            <p class="eyebrow">FORMACIÓN</p>
+            <h2 class="section-title">Educación y certificaciones</h2>
+            <p class="section-subtitle">
+              Formación técnica y bootcamp intensivo en desarrollo Full Stack en Java con aplicación directa en
+              proyectos reales.
+            </p>
+          </div>
+
+          <button type="button" id="printCvBtn" class="btn btn-outline no-print">
+            Imprimir / Guardar PDF
+          </button>
+        </div>
+
+        <div class="cv-column">
+          <div id="cvEducation"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. BLOG TÉCNICO ==================== -->
+    <!-- Artículos sobre Java, soporte técnico y desarrollo web con lectura integrada en modal -->
+    <section id="blog" class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">BLOG TÉCNICO</p>
+          <h2 class="section-title">Aprendizajes sobre Java y desarrollo web</h2>
+          <p class="section-subtitle">
+            Publico notas técnicas, soluciones a problemas reales y lecciones de mis proyectos en el ecosistema Java y
+            frontend.
+          </p>
+        </div>
+
+        <div class="blog-grid" id="blogGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 8. CONTÁCTAME Y PIE DE PÁGINA ==================== -->
+  <!-- Inspirado en el boceto: ondas digitales moradas en SVG y accesos circulares de contacto -->
+  <footer id="contacto" class="contact-section">
+    <!-- Ondas decorativas en vector SVG con degradado morado y azul claro -->
+    <svg class="contact-waves" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="waveStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#7B53CB" stop-opacity="0.2" />
+          <stop offset="35%" stop-color="#A678FF" stop-opacity="0.85" />
+          <stop offset="70%" stop-color="#9CD8F4" stop-opacity="0.65" />
+          <stop offset="100%" stop-color="#7B53CB" stop-opacity="0.25" />
+        </linearGradient>
+      </defs>
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="1.2" stroke-opacity="0.25"
+        d="M0,190 C280,105 520,260 760,165 C1020,75 1220,235 1440,150" />
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="1.3" stroke-opacity="0.35"
+        d="M0,200 C280,120 520,252 760,172 C1020,88 1220,228 1440,160" />
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="1.6" stroke-opacity="0.5"
+        d="M0,210 C280,135 520,244 760,179 C1020,100 1220,222 1440,170" />
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="2" stroke-opacity="0.72"
+        d="M0,220 C280,150 520,236 760,186 C1020,112 1220,215 1440,180" />
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="1.5" stroke-opacity="0.58"
+        d="M0,232 C280,164 520,228 760,194 C1020,126 1220,208 1440,190" />
+      <path fill="none" stroke="url(#waveStroke)" stroke-width="1.2" stroke-opacity="0.4"
+        d="M0,244 C280,178 520,220 760,202 C1020,140 1220,200 1440,202" />
+    </svg>
+
+    <div class="container">
+      <!-- Tarjeta central de contacto -->
+      <div class="contact-box">
+        <h2 class="contact-title">CONTÁCTAME</h2>
+        <p class="contact-subtitle">¿Tienes una idea? Hagámosla realidad.</p>
+        <p class="contact-message">
+          Estoy lista para crear experiencias digitales contigo y aportar en tu equipo como Desarrolladora Java Full
+          Stack Jr.
+        </p>
+
+        <!-- Botones circulares de Correo, Llamada, GitHub y LinkedIn (inyectados por JS) -->
+        <div class="contact-circles" id="contactCircles"></div>
+        <p class="contact-direct-info" id="contactDirectInfo"></p>
+      </div>
+
+      <!-- Barra inferior de derechos de autor y lemas personales -->
+      <div class="footer-bar">
+        <span>CREATIVIDAD · CÓDIGO · CONEXIÓN</span>
+        <span id="footerCopy"></span>
+        <span>DISEÑADO PARA INSPIRAR ✦</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL REUTILIZABLE (PROYECTOS Y BLOG) ==================== -->
+  <!-- Ventana emergente accesible para ver la ficha completa de un proyecto o leer un artículo -->
+  <div id="detailModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-panel" id="modalPanel">
+      <button type="button" id="modalCloseBtn" class="modal-close" aria-label="Cerrar ventana">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts del portafolio: primero se cargan los datos y luego la lógica que los dibuja -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
