@@ -303,23 +303,31 @@
     document.getElementById("contactCircles").innerHTML = `
       <a href="mailto:${g.email}?subject=Contacto%20desde%20tu%20Portafolio" class="contact-circle-item" title="Enviar correo a ${g.email}">
         <span class="contact-circle-icon">${icons.mail}</span>
-        <span>Correo</span>
-        <small class="contact-circle-value">${g.email}</small>
+        <span class="contact-circle-text">
+          <strong>Correo</strong>
+          <small class="contact-circle-value">${g.email}</small>
+        </span>
       </a>
       <a href="${g.phoneHref}" class="contact-circle-item" title="Llamar al ${g.phoneDisplay}">
         <span class="contact-circle-icon">${icons.phone}</span>
-        <span>Teléfono</span>
-        <small class="contact-circle-value">${g.phoneDisplay}</small>
+        <span class="contact-circle-text">
+          <strong>Teléfono</strong>
+          <small class="contact-circle-value">${g.phoneDisplay}</small>
+        </span>
       </a>
       <a href="${g.githubProfile}" target="_blank" rel="noreferrer" class="contact-circle-item" title="Abrir perfil de GitHub">
         <span class="contact-circle-icon">${icons.github}</span>
-        <span>GitHub</span>
-        <small class="contact-circle-value">@Lushi28</small>
+        <span class="contact-circle-text">
+          <strong>GitHub</strong>
+          <small class="contact-circle-value">@Lushi28</small>
+        </span>
       </a>
       <a href="${g.linkedinProfile}" target="_blank" rel="noreferrer" class="contact-circle-item" title="Abrir perfil de LinkedIn">
         <span class="contact-circle-icon">${icons.linkedin}</span>
-        <span>LinkedIn</span>
-        <small class="contact-circle-value">Perfil profesional</small>
+        <span class="contact-circle-text">
+          <strong>LinkedIn</strong>
+          <small class="contact-circle-value">Perfil profesional</small>
+        </span>
       </a>
     `;
 
