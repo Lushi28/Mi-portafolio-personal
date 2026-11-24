@@ -19,8 +19,8 @@ window.PORTFOLIO_DATA = {
     location: "Bogotá, Colombia · Disponible para trabajo presencial, híbrido o remoto",
     githubProfile: "https://github.com/Lushi28",
     portfolioRepository: "https://github.com/Lushi28/Mi-portafolio-personal",
-    // Perfil profesional de LinkedIn (actualiza aquí con tu URL exacta)
-    linkedinProfile: "https://www.linkedin.com/",
+    // Perfil profesional de LinkedIn
+    linkedinProfile: "https://www.linkedin.com/in/luisa-sep%C3%BAlveda-66b8693b1/",
   },
 
   // 2. SECCIÓN "SOBRE MÍ": historia personal en primera persona y 3 tarjetas resumen
